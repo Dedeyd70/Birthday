@@ -11,9 +11,16 @@ const messages = [
 
 const trudyPic = document.getElementById('trudyPic'); // Get reference to the image element
 let currentMessageIndex = 0;
+let intervalId;
 
 document.addEventListener("DOMContentLoaded", function() {
-    revealMessage();
+    document.getElementById('startButton').addEventListener('click', function() {
+        // Hide the start button after clicking
+        this.style.display = 'none';
+        
+        // Start the celebration
+        revealMessage();
+    });
 });
 
 function revealMessage() {
@@ -36,13 +43,24 @@ function showNextMessage() {
 }
 
 function showCelebration() {
-    addBalloonsAndStars();
     playBirthdaySong();
+    startBalloonsAndStars();
+}
+
+function startBalloonsAndStars() {
+    const song = document.getElementById('birthdaySong');
+    const songDuration = song.duration * 1000; // duration in milliseconds
+    
+    intervalId = setInterval(addBalloonsAndStars, 1000); // Add elements every second
+    
+    setTimeout(() => {
+        clearInterval(intervalId); // Stop adding elements after the song ends
+    }, songDuration);
 }
 
 function addBalloonsAndStars() {
     const colors = ['#FFD700', '#800080', '#FF69B4', '#87CEEB', '#FF6347', '#ADFF2F'];
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 5; i++) { // Adjust number of elements per interval
         const balloon = document.createElement('div');
         balloon.classList.add('balloon');
         balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
@@ -51,7 +69,7 @@ function addBalloonsAndStars() {
         document.body.appendChild(balloon);
         animateElement(balloon);
     }
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 5; i++) { // Adjust number of elements per interval
         const star = document.createElement('div');
         star.classList.add('star');
         star.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
