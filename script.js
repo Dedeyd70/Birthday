@@ -58,7 +58,7 @@ function showNextMessage() {
             intervalId = setTimeout(showNextMessage, 5000);
         }
     } else {
-        document.getElementById('teamMessage').innerText = "You've seen all the messages!";
+        document.getElementById('teamMessage').innerText = "Trudy, you are a great gem and a wonderful soul. Your presence lights up our lives with joy and warmth. On this special day, we celebrate not just your birthday, but the incredible person you are. May God bless you abundantly and grant all your wishes. May your days be filled with endless joy, laughter, and success. Thank you for being a constant source of inspiration and positivity. Here's to many more years of friendship and unforgettable memories. Team Trugrady all the way! Happy Birthday, Trudy!";
         trudyPic.style.display = 'none'; // Hide the image
         showCelebration();
     }
