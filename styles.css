@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('./ff.jpg '); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow: auto; /* Enable scrolling */
+}
+
+.container {
+    position: relative; /* Add this to make sure the button stays in the container */
+}
+
+.message {
+    text-align: center;
+    font-size: 2em;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    position: fixed; /* Fix button position */
+    bottom: 20px; /* Adjust bottom spacing */
+    z-index: 1; /* Ensure button is above other content */
+}
+
+.trudy-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+    display: none;
+}
