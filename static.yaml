@@ -1,0 +1,5 @@
+version: 1
+static:
+  - path: /src/styles.css
+    headers:
+      Content-Type: text/css
